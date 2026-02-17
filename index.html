@@ -5,14 +5,32 @@
     <meta charset="UTF-8">
 </head>
 <body>
-    <h1>My First Article</h1>
+    <h1>Connect to mySQL server as root from console by type</h1>
     <p>Posted on February 17, 2026</p>
 
-    <h2>Introduction</h2>
-    <p>
-        This is my first article published using GitHub Pages.
-        I am learning how to build websites!
-    </p>
+<pre>[root@vpshelpdesk]#mysql -u root -p
+<img class="alignnone wp-image-28 size-full" src="http://vpshelpdesk.com/wp-content/uploads/2016/06/Connect-to-mySQL-server-as-root-from-console.jpg" alt="Connect-to-mySQL-server-as-root-from-console" width="600" height="240" /></pre>
+Create a mySQL database using <strong>UTF-8 character set.</strong>
+
+The UTF-8 is recommended for the web because it has support for all unicode characters, and thereby allow you to use language-specific characters without having to use HTML entity replacements.
+<pre>mysql&gt;CREATE DATABASE dbuser CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+<img class="alignnone wp-image-29 size-full" src="http://vpshelpdesk.com/wp-content/uploads/2016/06/create-database-mySQL.jpg" alt="create-database-mySQL" width="600" height="31" />
+mysql&gt;CREATE USER 'user'@'localhost' IDENTIFIED BY 'password';
+mysql&gt;GRANT ALL PRIVILEGES ON dbuser.* TO 'user'@'localhost' WITH GRANT OPTION;
+mysql&gt;CREATE USER 'user'@'%' IDENTIFIED BY 'password';
+mysql&gt;GRANT ALL PRIVILEGES ON dbuser.* TO 'user'@'%' WITH GRANT OPTION;
+mysql&gt;FLUSH PRIVILEGES;
+mysql&gt;SHOW GRANTS FOR 'user'@'localhost';
+<img class="alignnone wp-image-30 size-full" src="http://vpshelpdesk.com/wp-content/uploads/2016/06/SHOW-GRANTS-FOR-user-localhost.jpg" alt="SHOW-GRANTS-FOR-user-localhost" width="600" height="226" />
+</pre>
+<div class="separator" style="clear: both; text-align: left;"><strong>Displaying list of users, use the SELECT USER statement</strong></div>
+<pre>mysql&gt;SELECT USER FROM mysql.user;</pre>
+<strong>To remove an account, use the DROP USER statement</strong>
+<pre>mysql&gt;DROP USER 'user'@'localhost';</pre>
+<strong>Displaying list of all databases, use the SHOW  DATABASES statement</strong>
+<pre>mysql&gt;show databases;</pre>
+<strong>To remove an database, use the DROP DATABASE statement</strong>
+<pre>mysql&gt;DROP DATABASE dbuser;</pre>
 
     <h2>Conclusion</h2>
     <p>
