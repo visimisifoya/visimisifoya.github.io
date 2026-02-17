@@ -3,39 +3,22 @@
 <head>
     <title>My First Article</title>
     <meta charset="UTF-8">
+    <meta name="description" content="My first article on GitHub Pages">
 </head>
 <body>
-    <h1>Connect to mySQL server as root from console by type</h1>
-    <p>Posted on February 17, 2026</p>
-
-[root@vpshelpdesk]#mysql -u root -p
-
-mysql>CREATE DATABASE dbuser CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-mysql>CREATE USER 'user'@'localhost' IDENTIFIED BY 'password';
-mysql>GRANT ALL PRIVILEGES ON dbuser.* TO 'user'@'localhost' WITH GRANT OPTION;
-mysql>CREATE USER 'user'@'%' IDENTIFIED BY 'password';
-mysql>GRANT ALL PRIVILEGES ON dbuser.* TO 'user'@'%' WITH GRANT OPTION;
-mysql>FLUSH PRIVILEGES;
-mysql>SHOW GRANTS FOR 'user'@'localhost';
-    
-Displaying list of users, use the SELECT USER statement
-
-mysql>SELECT USER FROM mysql.user;
-    
-To remove an account, use the DROP USER statement
-
-mysql>DROP USER 'user'@'localhost';
-    
-Displaying list of all databases, use the SHOW  DATABASES statement
-
-mysql>show databases;
-    
-To remove an database, use the DROP DATABASE statement
-
-mysql>DROP DATABASE dbuser;
+    <h1>My First Article</h1>
+    <p><em>Published on February 17, 2026</em></p>
 
     <p>
-        GitHub Pages is simple and free. I like it!
+        This is my article content. I am learning how to publish
+        articles using GitHub Pages.
     </p>
+
+    <h2>Why I Use GitHub Pages</h2>
+    <p>
+        It is free, simple, and good for beginners.
+    </p>
+
+    <a href="index.html">← Back to Home</a>
 </body>
 </html>
