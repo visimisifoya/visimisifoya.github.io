@@ -9,8 +9,8 @@
     <p>Posted on February 17, 2026</p>
 
 [root@vpshelpdesk]#mysql -u root -p
-mysql>CREATE DATABASE dbuser CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
+mysql>CREATE DATABASE dbuser CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 mysql>CREATE USER 'user'@'localhost' IDENTIFIED BY 'password';
 mysql>GRANT ALL PRIVILEGES ON dbuser.* TO 'user'@'localhost' WITH GRANT OPTION;
 mysql>CREATE USER 'user'@'%' IDENTIFIED BY 'password';
@@ -19,13 +19,17 @@ mysql>FLUSH PRIVILEGES;
 mysql>SHOW GRANTS FOR 'user'@'localhost';
     
 Displaying list of users, use the SELECT USER statement
+
 mysql>SELECT USER FROM mysql.user;
+    
 To remove an account, use the DROP USER statement
 
 mysql>DROP USER 'user'@'localhost';
+    
 Displaying list of all databases, use the SHOW  DATABASES statement
 
 mysql>show databases;
+    
 To remove an database, use the DROP DATABASE statement
 
 mysql>DROP DATABASE dbuser;
